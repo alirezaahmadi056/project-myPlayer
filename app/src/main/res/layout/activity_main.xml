@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:layout_height="80dp">
+
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:text="موزیک پلیر من"
+            android:textColor="@color/colorWhite"
+            android:textSize="30sp" />
+
+        <ImageView
+            android:id="@+id/imgMenu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="130dp"
+            android:layout_weight="0.5"
+            android:onClick="onClick"
+            android:src="@drawable/img_btn_playlist" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/backMain"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/colorBackMain"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.55"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                tools:ignore="UselessParent">
+
+                <TextView
+                    android:id="@+id/txtMusicName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="5dp"
+                    android:text="Music Player Name"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:id="@+id/imgDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="40dp"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/todo"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/img_back"
+                    tools:ignore="NestedWeights" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.1"
+            android:layoutDirection="rtl"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgShuffle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="110dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="0.5"
+                android:contentDescription="@string/todo"
+                android:onClick="onClick"
+                app:srcCompat="@drawable/img_btn_shuffle"
+                tools:ignore="NestedWeights" />
+
+            <ImageView
+                android:id="@+id/imgRepeat"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="110dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="0.5"
+                android:contentDescription="@string/todo"
+                android:onClick="onClick"
+                app:srcCompat="@drawable/img_btn_repeat" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="0.03"
+            android:layoutDirection="ltr"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtTimeCurrent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="0.1"
+                android:text="00:00"
+                android:textColor="@color/colorWhite"
+                android:textSize="12sp" />
+
+            <SeekBar
+                android:id="@+id/seekBarSound"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="0.8"
+                android:progressDrawable="@drawable/seekbar_progress"
+                android:thumb="@drawable/seek_handler"
+                tools:ignore="NestedWeights" />
+
+            <TextView
+                android:id="@+id/txtTimeRemain"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_weight="0.1"
+                android:text="00:00"
+                android:textColor="@color/colorAccent"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
+            android:background="@color/colorBackBottom"
+            android:baselineAligned="false"
+            android:layoutDirection="rtl"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg"
+                android:orientation="horizontal"
+                tools:ignore="NestedWeights">
+
+                <ImageView
+                    android:id="@+id/imgNext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_weight="0.2"
+                    android:contentDescription="@string/todo"
+                    android:onClick="onClick"
+                    app:srcCompat="@drawable/img_btn_next"
+                    tools:ignore="NestedWeights" />
+
+                <ImageView
+                    android:id="@+id/imgForWard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_weight="0.2"
+                    android:contentDescription="@string/todo"
+                    android:onClick="onClick"
+                    app:srcCompat="@drawable/img_btn_forward" />
+
+                <ImageView
+                    android:id="@+id/imgPlay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.14"
+                    android:contentDescription="@string/todo"
+                    android:onClick="onClick"
+                    app:srcCompat="@drawable/img_btn_play" />
+
+                <ImageView
+                    android:id="@+id/imgBackWard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:layout_weight="0.2"
+                    android:contentDescription="@string/todo"
+                    android:onClick="onClick"
+                    app:srcCompat="@drawable/img_btn_backward" />
+
+                <ImageView
+                    android:id="@+id/imgPrevios"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_weight="0.2"
+                    android:contentDescription="@string/todo"
+                    android:onClick="onClick"
+                    app:srcCompat="@drawable/img_btn_previous" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
